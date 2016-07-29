@@ -982,7 +982,7 @@ LaplacesDemon <- function(Model, Data, Initial.Values, Covar=NULL,
                     Specs[["Dyn"]] <- as.matrix(Specs[["Dyn"]])
                }
           }
-     else {cat("Unknown algorithm has been changed to Metropolis-within-Gibbs.\n",
+     else {stop(paste("Unknown algorithm (", Algorithm, ") specified.\n", sep=""),
                 file=LogFile, append=TRUE)
           Algorithm <- "Metropolis-within-Gibbs"
           Specs <- NULL}
